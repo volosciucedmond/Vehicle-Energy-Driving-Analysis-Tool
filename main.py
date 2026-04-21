@@ -1,5 +1,6 @@
 from src import analysis, visualization
 
+
 filePath = 'data/drive_cycle.csv'
 print("Starting analysis of trip data...")
 

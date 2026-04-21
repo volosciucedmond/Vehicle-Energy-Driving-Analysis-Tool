@@ -1,4 +1,4 @@
-from src.physics import convert_kmh_to_ms, calculate_drag, calculate_rolling_resistance, calculate_acceleration_force, calculate_total_power
+from src.physics import convert_kmh_to_ms, calculate_drag, calculate_rolling_resistance, calculate_acceleration_force, calculate_total_power, calculate_gradient_force
 import pandas as pd
 import json
 
@@ -15,9 +15,10 @@ def analyze_trip_data(file_path, vehicle_name):
 
     df["velocity"] = convert_kmh_to_ms(df["speed(km/h)"])
     df["drag_force"] = calculate_drag(df["velocity"], drag_coefficient=drag_coefficient, area=frontal_area)
-    df["rolling_resistance"] = calculate_rolling_resistance(mass=mass, rolling_resistance_coefficient=crr)
+    df["rolling_resistance"] = calculate_rolling_resistance(mass=mass, rolling_resistance_coefficient=crr, slope_percent=df["slope(%)"])
+    df["gradient_force"] = calculate_gradient_force(mass=mass, slope_percent=df["slope(%)"])
     df["acceleration_force"] = calculate_acceleration_force(mass=mass, acceleration=df["acceleration(m/s²)"])
-    df["total_force"] = df["drag_force"] + df["rolling_resistance"] + df["acceleration_force"]
+    df["total_force"] = df["drag_force"] + df["rolling_resistance"] + df["acceleration_force"] + df["gradient_force"]
     df["power"] = calculate_total_power(df["velocity"], df["total_force"])
     df["energy_j"] = df["power"] * 1
     df["cumulative_energy_kwh"] = df["energy_j"].cumsum() / 3.6e6
