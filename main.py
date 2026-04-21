@@ -1,7 +1,7 @@
 from src import analysis, visualization
 
 
-filePath = 'data/drive_cycle.csv'
+filePath = 'data/wltp_drive_cycle.csv'
 print("Starting analysis of trip data...")
 
 data_tesla = analysis.analyze_trip_data(filePath, vehicle_name="tesla_model_3")
