@@ -30,5 +30,6 @@ def analyze_trip_data(file_path, vehicle_name):
 
     kwh_per_100km = (total_joules / 3.6e6) / (total_distance / 100000)
     print(f"Energy consumption for {car_data[vehicle_name]['name']}: {kwh_per_100km:.2f} kWh/100km")
+    df["kwh_per_100km"] = kwh_per_100km
     # print(trip_data)
     return df
