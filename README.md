@@ -21,12 +21,12 @@ _Energy consumption: 9.21 kWh/100km_
 How to run?
 -----------
 
-1.  **Install dependencies: 
+1.  **Install dependencies: **
 ```bash 
 pip install -r requirements.txt
 ```
     
-2.  **Generate data: 
+2.  **Generate data: **
 ```bash 
 python src/generate_data.py
 ```
