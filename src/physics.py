@@ -25,3 +25,14 @@ def calculate_gradient_force(mass, slope_percent):
     slope_rad = np.arctan(slope_percent / 100)
     # we use sin for gradient force because acts parallel to the road
     return mass * GRAVITY * np.sin(slope_rad)
+
+def calculate_motor_efficiency(rpm, torque):
+    # simplified ev motor efficiency map
+    t = abs(torque)
+    
+    base_eff = 0.94 # peak efficiency
+    rpm_loss = 0.05 * (rpm / 15000) ** 2
+    torque_loss = 0.05 * (t / 400) ** 2
+    
+    efficiency = base_eff - rpm_loss - torque_loss
+    return np.clip(efficiency, 0.7, 0.95) # keep it realistic (70% to 95 %)

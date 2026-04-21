@@ -27,3 +27,25 @@ def plot_results(df, vehicle_id):
     
     plt.tight_layout()
     plt.show()
+    
+def plot_efficiency_check(df, vehicle_name):
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
+
+    # Plot 1: The Power Tax
+    ax1.plot(df['time(s)'], df['battery_power_w'] / 1000, label='Battery Power (kW)', alpha=0.7)
+    ax1.plot(df['time(s)'], df['power'] / 1000, label='Mechanical Power (kW)', linestyle='--')
+    ax1.set_ylabel('Power (kW)')
+    ax1.set_title(f'Power Comparison & Efficiency Tax: {vehicle_name}')
+    ax1.legend()
+    ax1.grid(True)
+
+    # Plot 2: Efficiency Changes
+    ax2.plot(df['time(s)'], df['motor_efficiency'], color='green')
+    ax2.set_ylabel('Efficiency (%)')
+    ax2.set_xlabel('Time (s)')
+    ax2.set_ylim(0.6, 1.0) # Zoom in to see the changes
+    ax2.set_title('Motor Efficiency Throughout Trip')
+    ax2.grid(True)
+
+    plt.tight_layout()
+    plt.show()

@@ -4,27 +4,44 @@
     "mass_kg": 1750,
     "drag_coefficient": 0.22,
     "frontal_area_m2": 2.22,
-    "crr": 0.012
+    "crr": 0.012,
+    "wheel_radius_m": 0.3,
+    "battery_capacity_kwh": 75
   },
   "vw_id3": {
     "name": "VW ID.3",
     "mass_kg": 1800,
     "drag_coefficient": 0.27,
     "frontal_area_m2": 2.36,
-    "crr": 0.015
+    "crr": 0.015,
+    "wheel_radius_m": 0.32,
+    "battery_capacity_kwh": 77
   },
   "dacia_spring": {
     "name": "Dacia Spring",
     "mass_kg": 970,
     "drag_coefficient": 0.33,
     "frontal_area_m2": 2.10,
-    "crr": 0.015
+    "crr": 0.015,
+    "wheel_radius_m": 0.25,
+    "battery_capacity_kwh": 26.8
   },
   "audi_etron_gt": {
     "name": "Audi e-tron GT",
     "mass_kg": 2300,
     "drag_coefficient": 0.24,
     "frontal_area_m2": 2.35,
-    "crr": 0.011
+    "crr": 0.011,
+    "wheel_radius_m": 0.35,
+    "battery_capacity_kwh": 97
+  },
+  "ford_transit_electric": {
+    "name": "Ford Transit Electric",
+    "mass_kg": 2850,
+    "drag_coefficient": 0.44,
+    "frontal_area_m2": 5.40,
+    "crr": 0.017,
+    "wheel_radius_m": 0.37,
+    "battery_capacity_kwh": 68
   }
 }
