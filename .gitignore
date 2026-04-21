@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments (Virtual Envs)
+venv/
+env/
+.env
+myproject/
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+# IDEs
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific: Ignore generated data if it gets too large 
+# (Optional: remove the line below if you want to keep your sample data on GitHub)
+data/drive_cycle.csv
