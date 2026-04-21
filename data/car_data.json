@@ -1,0 +1,30 @@
+{
+  "tesla_model_3": {
+    "name": "Tesla Model 3",
+    "mass_kg": 1750,
+    "drag_coefficient": 0.22,
+    "frontal_area_m2": 2.22,
+    "crr": 0.012
+  },
+  "vw_id3": {
+    "name": "VW ID.3",
+    "mass_kg": 1800,
+    "drag_coefficient": 0.27,
+    "frontal_area_m2": 2.36,
+    "crr": 0.015
+  },
+  "dacia_spring": {
+    "name": "Dacia Spring",
+    "mass_kg": 970,
+    "drag_coefficient": 0.33,
+    "frontal_area_m2": 2.10,
+    "crr": 0.015
+  },
+  "audi_etron_gt": {
+    "name": "Audi e-tron GT",
+    "mass_kg": 2300,
+    "drag_coefficient": 0.24,
+    "frontal_area_m2": 2.35,
+    "crr": 0.011
+  }
+}
