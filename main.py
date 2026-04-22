@@ -30,16 +30,19 @@ for cid in car_data_id:
     })
     
     plt.plot(result_df['time(s)'],
-             result_df['battery_power_w'],
-            label=f"car: {pretty_name} | Battery Power: {result_df['battery_power_w'].max() / 1000:.2f} kW",
+             result_df['cumulative_energy_kwh'],
+            label=f"Vehicle: {pretty_name} | Consumption: {result_df['kwh_per_100km'].iloc[0]:.2f} kWh/100km",
     ) 
+    # visualization.plot_efficiency_check(result_df, pretty_name)
     
 plt.title("WLTP Cycle: Multi-vehicle Energy Comparison")
 plt.xlabel("Time (s)")
-plt.ylabel("Motor RPM")
+plt.ylabel("Energy Consumed (kWh)")
 plt.legend()
 plt.grid(True)
 plt.show()
+
+
 
 import pandas as pd
 summary_df = pd.DataFrame(results)
