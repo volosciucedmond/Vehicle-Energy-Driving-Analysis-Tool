@@ -6,13 +6,22 @@ import json
 with open('data/car_data.json', 'r') as f:
     car_data = json.load(f)
 
-def analyze_trip_data(file_path, vehicle_name):
+def analyze_trip_data(file_path, vehicle_name, mass_override=None, speed_multiplier=1.0):
     df = pd.read_csv(file_path)
-    mass = car_data[vehicle_name]["mass_kg"]
-    drag_coefficient = car_data[vehicle_name]["drag_coefficient"]
-    frontal_area = car_data[vehicle_name]["frontal_area_m2"]
-    crr = car_data[vehicle_name]["crr"]
-    wheel_radius = car_data[vehicle_name]["wheel_radius_m"]
+    
+    # get base data from JSON
+    car = car_data[vehicle_name]
+    
+    # apply overrides (use slider value if provided, otherwise use JSON value)
+    mass = mass_override if mass_override is not None else car["mass_kg"]
+    
+    drag_coefficient = car["drag_coefficient"]
+    frontal_area = car["frontal_area_m2"]
+    crr = car["crr"]
+    wheel_radius = car["wheel_radius_m"]
+
+    # apply speed multiplier to the entire speed column
+    df["speed(km/h)"] = df["speed(km/h)"] * speed_multiplier
     
 
     df["velocity"] = convert_kmh_to_ms(df["speed(km/h)"])
