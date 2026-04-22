@@ -50,10 +50,6 @@ $F_g = m g \sin(\theta)$
 
 Battery Power: Calculated as $P_{wheels} / \eta_{motor}$ during traction and $P_{wheels} \cdot \eta_{motor}$ during regeneration.
 
-Rolling Resistance: F_{rr} = C_{rr} m g  (	heta)
-Gradient Force: F_g = m g  (	heta)
-battery Power: Calculated as P_{wheels} / ta_{motor} during traction and P_{wheels} ta_{motor} during regeneration.
-
 
 ## 🚀 How to Run
 1. Clone the repository.
